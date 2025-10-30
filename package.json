@@ -2,6 +2,7 @@
   "name": "atelier-irmak-astro",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@10",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,6 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.15.1"
+    "@tailwindcss/vite": "^4.1.16",
+    "astro": "^5.15.1",
+    "astro-cloudinary": "^1.3.5",
+    "cloudinary": "^2.8.0",
+    "tailwindcss": "^4.1.16"
   }
 }
