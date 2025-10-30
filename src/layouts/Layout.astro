@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+const { title } = Astro.props;
+import Link from "../components/Link.astro";
 ---
 
 <!doctype html>
@@ -9,9 +11,13 @@ import "../styles/global.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Atelier Irmak</title>
+		<title>{title} | Atelier Irmak</title>
 	</head>
 	<body>
+		<nav class="flex gap-4">
+			<Link href="/">Home</Link>
+			<Link href="/about">About</Link>
+		</nav>
 		<slot />
 	</body>
 </html>
