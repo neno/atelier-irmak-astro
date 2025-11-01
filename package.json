@@ -2,7 +2,6 @@
   "name": "atelier-irmak-astro",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@10",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -11,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.1",
+    "@fontsource/raleway": "^5.2.8",
     "@tailwindcss/vite": "^4.1.16",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
@@ -20,5 +20,14 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.1.16"
+  },
+  "devDependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-fluid-type": "^2.0.7"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=10"
   }
 }

@@ -1,7 +1,8 @@
 ---
 import "../styles/global.css";
 const { title } = Astro.props;
-import Link from "../components/Link.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -10,15 +11,16 @@ import Link from "../components/Link.astro";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="https://use.typekit.net/cnq3ltd.css">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Atelier Irmak</title>
 	</head>
-	<body>
-		<nav class="flex gap-4">
-			<Link href="/">Home</Link>
-			<Link href="/about">About</Link>
-		</nav>
-		<slot />
+	<body class="overflow-x-hidden flex flex-col min-h-screen text-base font-light pt-21.75 md:pt-26.25 lg:pt-0">
+		<Header />
+		<main class="relative z-10 flex-auto">
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>
 

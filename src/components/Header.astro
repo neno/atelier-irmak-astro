@@ -1,0 +1,32 @@
+---
+import { cn } from "../lib/utils";
+import Container from "./ui/Container.astro";
+const links = [
+  { href: "/referenzen", label: "Referenzen" },
+  { href: "/kompetenzen", label: "Kompetenzen" },
+  { href: "/ueber-uns", label: "Über uns" },
+];
+---
+
+<header
+  class={cn(
+    'fixed top-0 left-0 w-screen h-auto p-4 z-20 bg-white bg-opacity-90 shadow-lg',
+    'lg:static lg:shadow-none lg:z-auto'
+  )}
+>
+  <Container className="px-0">
+    <nav class={cn("lg:h-auto lg:flex items-center")}>
+      <div class="flex items-center">
+        <a href="/" class="block relative w-18.75 h-13.75 md:w-25 md:h-18.25 flex-none" aria-label="Startseite">
+          <img src="/atelier-irmak.svg" alt="Atelier Irmak" class="w-full h-full object-contain object-center" />
+        </a>
+      </div>
+      <ul class="lg:flex lg:ml-auto">
+        {links.map((link) => (
+          <li class="mt-4 lg:px-4 lg:mt-0"><a href={link.href} class="text-xl text-primary block p-4 lg:p-2 border-b-2 border-transparent hover:border-b-primary transition-colors">{link.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </Container>
+</header>
+                                                   

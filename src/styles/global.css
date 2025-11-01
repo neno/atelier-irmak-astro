@@ -1,15 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --color-background: #ffffff;
-  --color-foreground: #171717;
-  --color-primary: #333d98;
-  --color-primary-light: ##4e5de6;
-
-  --font-family-serif: "ivymode", serif;
-  --font-family-railway: "railway", sans-serif;
-}
-
 body {
   background: var(--color-background);
   color: var(--color-foreground);
@@ -67,11 +57,13 @@ h6 {
   font-weight: 500;
 }
 
-a {
+a:not([class*="text-"]) {
   color: var(--color-primary);
 }
 
 @theme {
+  --color-background: #ffffff;
+  --color-foreground: #171717;
   --color-current: currentColor;
   --color-transparent: transparent;
   --color-primary: #333d98;
@@ -89,6 +81,27 @@ a {
   --color-slate-300: #cbd5e1;
   --color-slate-400: #9ca3af;
   --color-slate-500: #64748b;
+
+  --font-family-serif: "ivymode", serif;
+  --font-family-railway: "railway", sans-serif;
+
+  --font-size-xs: 0.75rem 1.6;
+  --font-size-sm: 0.875rem 1.6;
+  --font-size-base: 1rem 1.6;
+  --font-size-lg: 1.125rem 1.6;
+  --font-size-xl: 1.25rem 1.2;
+  --font-size-xl--letter-spacing: 0.02em;
+  --font-size-2xl: 1.5rem 1.2;
+  --font-size-2xl--letter-spacing: 0.02em;
+  --font-size-3xl: 1.875rem 1.2;
+  --font-size-3xl--letter-spacing: 0.02em;
+  --font-size-4xl: 2.25rem 1.2;
+  --font-size-4xl--letter-spacing: 0.02em;
+  --font-size-5xl: 3rem 1.1;
+  --font-size-6xl: 3.75rem 1.1;
+  --font-size-7xl: 4.5rem 1;
+  --font-size-8xl: 6rem 1;
+  --font-size-9xl: 8rem 1;
 
   --aspect-ratio-2-1: 2 / 1;
   --aspect-ratio-16-9: 16 / 9;
