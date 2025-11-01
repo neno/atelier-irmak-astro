@@ -1,14 +1,14 @@
 [
-  {
-    "id": 1,
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "occupation": "Software Engineer"
-  },
-  {
-    "id": 2,
-    "name": "Jane Doe",
-    "email": "jane.doe@example.com",
-    "occupation": "Data Scientist"
-  }
+	{
+		"id": 1,
+		"name": "John Doe",
+		"email": "john.doe@example.com",
+		"occupation": "Software Engineer"
+	},
+	{
+		"id": 2,
+		"name": "Jane Doe",
+		"email": "jane.doe@example.com",
+		"occupation": "Data Scientist"
+	}
 ]
