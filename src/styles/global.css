@@ -1,1 +1,108 @@
 @import "tailwindcss";
+
+:root {
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  --color-primary: #333d98;
+  --color-primary-light: ##4e5de6;
+
+  --font-family-serif: "ivymode", serif;
+  --font-family-railway: "railway", sans-serif;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-family-railway), Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: var(--font-family-serif);
+  color: var(--color-primary);
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: var(--font-family-serif);
+  color: var(--color-primary);
+  font-size: clamp(1.75rem, 3.5vw, 3.5rem);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: var(--font-family-serif);
+  color: var(--color-primary);
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+h4 {
+  font-family: var(--font-family-serif);
+  color: var(--color-primary);
+  font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+h5 {
+  font-family: var(--font-family-serif);
+  color: var(--color-primary);
+  font-size: clamp(1.125rem, 2vw, 2rem);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+h6 {
+  font-family: var(--font-family-serif);
+  color: var(--color-primary);
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+@theme {
+  --color-current: currentColor;
+  --color-transparent: transparent;
+  --color-primary: #333d98;
+  --color-blue: #333d98;
+  --color-alternative: #551e13;
+  --color-red: #551e13;
+  --color-primary-dark: #12184d;
+  --color-primary-light: #4e5de6;
+  --color-light: #939be5;
+  --color-gray: #f1f5f9;
+  --color-black: #2d2d2d;
+  --color-white: #ffffff;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #9ca3af;
+  --color-slate-500: #64748b;
+
+  --aspect-ratio-2-1: 2 / 1;
+  --aspect-ratio-16-9: 16 / 9;
+  --aspect-ratio-4-3: 4 / 3;
+  --aspect-ratio-3-2: 3 / 2;
+  --aspect-ratio-1-1: 1 / 1;
+  --aspect-ratio-9-16: 9 / 16;
+  --aspect-ratio-3-4: 3 / 4;
+  --aspect-ratio-2-3: 2 / 3;
+  --aspect-ratio-1-2: 1 / 2;
+  --aspect-ratio-1-3: 1 / 3;
+
+  --list-style-type-none: none;
+  --list-style-type-square: square;
+
+  --fill-current: currentColor;
+}
