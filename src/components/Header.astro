@@ -1,33 +1,117 @@
 ---
-import { cn } from "../lib/utils";
-import Container from "./ui/Container.astro";
+import Email from "./ui/icons/Email.astro";
+import Logo from "./ui/icons/Logo.astro";
+import Phone from "./ui/icons/Phone.astro";
+import Menu from "./ui/icons/Menu.astro";
+import Close from "./ui/icons/Close.astro";
 
 const links = [
-	{ href: "/referenzen", label: "Referenzen" },
-	{ href: "/kompetenzen", label: "Kompetenzen" },
-	{ href: "/ueber-uns", label: "Über uns" },
+  { href: "/referenzen", label: "Referenzen" },
+  { href: "/kompetenzen", label: "Kompetenzen" },
+  { href: "/ueber-uns", label: "Über uns" },
 ];
 ---
 
-<header
-  class={cn(
-    'fixed top-0 left-0 w-screen h-auto p-4 z-20 bg-white bg-opacity-90 shadow-lg',
-    'lg:static lg:shadow-none lg:z-auto'
-  )}
->
-  <Container className="px-0">
-    <nav class={cn("lg:h-auto lg:flex items-center")}>
-      <div class="flex items-center">
-        <a href="/" class="block relative w-18.75 h-13.75 md:w-25 md:h-18.25 flex-none" aria-label="Startseite">
-          <img src="/atelier-irmak.svg" alt="Atelier Irmak" class="w-full h-full object-contain object-center" />
+<header class="p-4">
+  <a href="#main" class="sr-only">Zum Inhalt springen</a>
+  <nav class="lg:container lg:mx-auto">
+    <div class="flex justify-between items-center">
+      <a href="/" class="flex-0" aria-label="Startseite">
+        <Logo width={100} height={73} />
+      </a>
+      <div class="flex-1 flex justify-end items-center">
+        <ul class="hidden lg:flex lg:ml-auto">
+          {
+            links.map((link) => (
+              <li class="mt-4 lg:px-4 lg:mt-0">
+                <a
+                  href={link.href}
+                  class="text-xl text-primary block p-4 lg:p-2 border-b border-transparent hover:border-b-primary transition-colors"
+                  aria-label={link.label}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <a
+          href="tel:+41313120604"
+          class="text-xl text-primary block mx-4 p-4 lg:p-2 border rounded-full border-transparent hover:border-primary transition-colors"
+          aria-label="Rufen Sie uns an"
+        >
+          <Phone class="w-full h-full" />
+        </a>
+        <a
+          href="mailto:info@atelier-irmak.ch"
+          class="text-xl text-primary block mx-4 p-4 lg:p-2 border rounded-full border-transparent hover:border-primary transition-colors"
+          aria-label="Kontaktieren Sie uns via E-Mail"
+        >
+          <Email class="w-full h-full" />
         </a>
       </div>
-      <ul class="lg:flex lg:ml-auto">
-        {links.map((link) => (
-          <li class="mt-4 lg:px-4 lg:mt-0"><a href={link.href} class="text-xl text-primary block p-4 lg:p-2 border-b-2 border-transparent hover:border-b-primary transition-colors">{link.label}</a></li>
-        ))}
+      <button
+        id="mobile-nav-toggle"
+        class="lg:hidden text-xl text-primary block mx-4 p-4 lg:p-2 border rounded-full border-transparent hover:border-primary transition-colors"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span>
+          <Menu class="hidden" ariaLabel="Menü" />
+        </span>
+        <span>
+          <Close class="hidden" ariaLabel="Schliessen" />
+        </span>
+      </button>
+      <ul
+        id="mobile-nav"
+        class="inset-0 top-25 z-20 absolute p-4 bg-white lg:hidden!"
+      >
+        {
+          links.map((link) => (
+            <li class="mt-4 lg:px-4 lg:mt-0">
+              <a
+                href={link.href}
+                class="text-xl text-primary block py-4 "
+                aria-label={link.label}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
-    </nav>
-  </Container>
+    </div>
+  </nav>
 </header>
-                                                   
+
+<style>
+  /* Toggle mobile nav based on aria-expanded */
+  [aria-expanded="true"] + #mobile-nav {
+    display: block;
+  }
+  [aria-expanded="false"] + #mobile-nav {
+    display: none;
+  }
+  /* Toggle icons inside the button based on aria-expanded */
+  [aria-expanded="true"] *:first-child {
+    display: none;
+  }
+  [aria-expanded="false"] *:last-child {
+    display: none;
+  }
+</style>
+
+<script>
+  const navToggle = document.querySelector('[aria-controls="mobile-nav"]');
+
+  navToggle?.addEventListener("click", () => {
+    const isExpanded =
+      navToggle.getAttribute("aria-expanded") === "true" ? true : false;
+    if (isExpanded) {
+      navToggle?.setAttribute("aria-expanded", "false");
+    } else {
+      navToggle?.setAttribute("aria-expanded", "true");
+    }
+  });
+</script>
