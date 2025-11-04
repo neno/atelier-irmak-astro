@@ -65,14 +65,14 @@ const links = [
       </button>
       <ul
         id="mobile-nav"
-        class="inset-0 top-25 z-20 absolute p-4 bg-white lg:hidden!"
+        class="inset-0 top-25 pt-16 z-20 absolute p-4 bg-white lg:hidden!"
       >
         {
           links.map((link) => (
-            <li class="mt-4 lg:px-4 lg:mt-0">
+            <li class="lg:px-4 border-b first:border-t border-primary">
               <a
                 href={link.href}
-                class="text-xl text-primary block py-4 "
+                class="text-xl text-primary block py-4"
                 aria-label={link.label}
               >
                 {link.label}

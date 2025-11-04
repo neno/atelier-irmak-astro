@@ -8,28 +8,28 @@ import Header from "../components/Header.astro";
 
 <!doctype html>
 <html lang="de">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="stylesheet" href="https://use.typekit.net/cnq3ltd.css">
-		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Atelier Irmak</title>
-	</head>
-	<body class="overflow-x-hidden flex flex-col min-h-screen text-base font-light">
-		<Header />
-		<main id="main" class="relative z-10 flex-auto">
-			<slot />
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://use.typekit.net/cnq3ltd.css" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Atelier Irmak</title>
+  </head>
+  <body class="overflow-x-hidden flex flex-col text-base font-light">
+    <Header />
+    <main id="main" class="relative z-10 flex-auto">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100dvh;
+  }
 </style>
